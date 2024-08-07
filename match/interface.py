@@ -39,17 +39,17 @@ class MatchInterface:
         else:
             raise ExportFileNotRecognizedError
 
-    def _get_password_items(self) -> dict[str, list]:
+    def _get_password_items(self) -> dict[str, list[str]]:
         match self._password_manager:
             case "bitwarden":
-                from bitwarden import bitwarden_items
+                from match.bitwarden import bitwarden_items
 
                 return bitwarden_items(self._password_items_path)
 
             case _:
                 raise PasswordManagerNotSupportedError
 
-    def match(self) -> dict:
+    def match(self) -> dict[str, list[str]]:
         matched_items = {}
 
         password_items = self._get_password_items()

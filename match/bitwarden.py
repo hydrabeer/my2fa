@@ -2,7 +2,7 @@ import json
 from os import PathLike
 
 
-def bitwarden_items(path: str | PathLike) -> dict[str, list]:
+def bitwarden_items(path: str | PathLike) -> dict[str, list[str]]:
     output = {}
     if path[-4:] == "json":
         with open(path, "r") as f:
