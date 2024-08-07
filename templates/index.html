@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>My 2FA</title>
+  <meta charset="UTF-8">
+  <title>My 2FA</title>
 </head>
 <body>
 <h1>My 2FA</h1>
-
+<form method="POST" action="/match">
+  <button type="submit">Fetch and Match</button>
+</form>
+{% if matched_items %}
+  <h2>Matched Items:</h2>
+  <ul>
+    {% for item in matched_items %}
+      <li>{{ item }}, {{ matched_items[item] }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
 </body>
 </html>
