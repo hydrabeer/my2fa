@@ -119,6 +119,9 @@ celerybeat.pid
 # SageMath parsed files
 *.sage.py
 
+# Secrets
+bitwarden_export.*
+
 # Environments
 .env
 .venv
