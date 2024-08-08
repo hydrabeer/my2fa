@@ -1,3 +1,4 @@
+import csv
 import json
 from os import PathLike
 
@@ -12,7 +13,13 @@ def bitwarden_items(path: str | PathLike) -> dict[str, list[str]]:
                     output[item["name"]] = [
                         entry["uri"] for entry in item["login"]["uris"]
                     ]
+    elif path[-3:] == "csv":
+        with open(path, "r") as csvfile:
+            reader = csv.DictReader(csvfile)
+            for row in reader:
+                row: dict
+                if row["type"] == "login":
+                    output[row["name"]] = [row["login_uri"]]
     else:
-        raise NameError  # cry about it
-
+        raise NameError("File type not supported")
     return output
