@@ -10,6 +10,11 @@
 <body>
 <h2>File uploaded successfully</h2>
 <p>File Name: {{ name }}</p>
+<em>Pressing this button will make a request to the 2FA Directory API, so your
+  IP address will be subject to
+  <a href="https://2fa.directory/privacy/">
+    2FA Directory's privacy policy</a>.
+</em>
 <form method="POST" action="/match">
   <button type="submit">Fetch and Match</button>
 </form>
