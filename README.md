@@ -23,5 +23,6 @@ Your password manager export file must be placed in `my2fa/`. This tool currentl
 
 ### Export instructions:
 [Bitwarden](https://bitwarden.com/learning/passwordmanager-how-to-export-your-bitwarden-vault/)
+[LastPass](https://support.lastpass.com/s/document-item?bundleId=lastpass&topicId=LastPass/export-vault.html&_LANG=enus)
 
 **Please note that your IP address will be subject to [2FA Directory's privacy policy](https://2fa.directory/privacy/) when you use this tool. This tool never reveals information about your accounts outside your local machine.**
