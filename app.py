@@ -14,7 +14,7 @@ def index():
 @app.route("/match", methods=["POST"])
 def match():
     api_data = fetch_2fa_data()
-    matcher = MatchInterface(api_data, "bitwarden_export.json")
+    matcher = MatchInterface(api_data, "lastpass_vault_export.csv")
     matched_items = matcher.match()
 
     return render_template("index.html", matched_items=matched_items)
