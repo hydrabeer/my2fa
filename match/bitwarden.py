@@ -1,9 +1,14 @@
+"""Parse Bitwarden export files."""
+
 import csv
 import json
 from os import PathLike
 
 
-def bitwarden_items(path: str | PathLike) -> dict[str, list[str]]:
+def bitwarden_items(path: str | PathLike[str]) -> dict[str, list[str]]:
+    """Accept a path to a Bitwarden export file (.csv or .json) and return a dictionary
+    mapping login item names to lists of their URIs.
+    """
     output = {}
     if path[-4:] == "json":
         with open(path, "r") as f:
