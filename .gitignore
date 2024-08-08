@@ -120,8 +120,10 @@ celerybeat.pid
 *.sage.py
 
 # Secrets
-bitwarden*.json
-bitwarden*.csv
+*.1pif
+*.1pux
+*.csv
+*.json
 
 # Environments
 .env
