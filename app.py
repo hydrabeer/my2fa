@@ -1,6 +1,7 @@
 import secrets
 
 from flask import Flask, render_template, request, session
+from werkzeug.utils import secure_filename
 
 from api.fetch import fetch_2fa_data
 from match.interface import MatchInterface
@@ -46,10 +47,11 @@ def match():
 def success():
     if request.method == "POST":
         f = request.files["file"]
-        f.save(f.filename)
-        session["filename"] = f.filename
+        filename = secure_filename(f.filename)
+        f.save(filename)
+        session["filename"] = filename
         return render_template("acknowledgement.html", name=f.filename)
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
