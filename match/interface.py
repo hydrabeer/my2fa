@@ -34,10 +34,13 @@ class MatchInterface:
         self._password_manager = self._detect_password_manager()
 
     def _detect_password_manager(self) -> str:
-        if "bitwarden" in self._password_items_path.lower():
+        path_lower = self._password_items_path.lower()
+        if "bitwarden" in path_lower:
             return "bitwarden"
-        elif "lastpass" in self._password_items_path.lower():
+        elif "lastpass" in path_lower:
             return "lastpass"
+        elif "1password" in path_lower:
+            return "1password"
         else:
             raise ExportFileNotRecognizedError
 
@@ -51,6 +54,10 @@ class MatchInterface:
                 from match.lastpass import lastpass_items
 
                 return lastpass_items(self._password_items_path)
+            case "1password":
+                from match.one_password import one_password_items
+
+                return one_password_items(self._password_items_path)
             case _:
                 raise PasswordManagerNotSupportedError
 
