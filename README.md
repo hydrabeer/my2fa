@@ -19,10 +19,10 @@ pipenv run python app.py
 
 This setup will create a locally run server using Flask, which you can access via a web browser. The application will fetch data from the [2FA Directory API](https://2fa.directory/api/), match entries with items from your password manager export file, and display the results on a web page.
 
-Your password manager export file must be placed in `my2fa/`. This tool currently only supports unencrypted export files, so you should delete your export file and empty your trash bin as soon as you are finished with the tool.
+This tool currently only supports unencrypted export files, so you should delete your export file from its original location and the project and empty your trash bin as soon as you are finished with the tool.
 
 ### Export instructions:
-- [1Password](https://support.1password.com/export/)
+- [1Password](https://support.1password.com/export/) (Choose `.csv`)
 - [Bitwarden](https://bitwarden.com/learning/passwordmanager-how-to-export-your-bitwarden-vault/)
 - [LastPass](https://support.lastpass.com/s/document-item?bundleId=lastpass&topicId=LastPass/export-vault.html&_LANG=enus)
 
