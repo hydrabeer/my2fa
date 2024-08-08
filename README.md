@@ -22,6 +22,6 @@ This setup will create a locally run server using Flask, which you can access vi
 Your password manager export file must be placed in `my2fa/`. This tool currently only supports unencrypted export files, so you should delete your export file and empty your trash bin as soon as you are finished with the tool.
 
 ### Export instructions:
-[Bitwarden](https://bitwarden.com/learning/passwordmanager-how-to-export-your-bitwarden-vault/) (Choose `.json`)
+[Bitwarden](https://bitwarden.com/learning/passwordmanager-how-to-export-your-bitwarden-vault/)
 
 **Please note that your IP address will be subject to [2FA Directory's privacy policy](https://2fa.directory/privacy/) when you use this tool. This tool never reveals information about your accounts outside your local machine.**
