@@ -25,10 +25,19 @@ def not_found_error(error):
     return render_template("405.html"), 404
 
 
-# Handling error 500 and displaying relevant web page
 @app.errorhandler(500)
 def internal_error(error):
     return render_template("500.html"), 500
+
+
+@app.route("/success", methods=["POST"])
+def success():
+    if request.method == "POST":
+        f = request.files["file"]
+        filename = secure_filename(f.filename)
+        f.save(filename)
+        session["filename"] = filename
+        return render_template("acknowledgement.html", name=f.filename)
 
 
 @app.route("/match", methods=["POST"])
@@ -41,16 +50,6 @@ def match():
     matched_items = matcher.match()
 
     return render_template("matches.html", matched_items=matched_items)
-
-
-@app.route("/success", methods=["POST"])
-def success():
-    if request.method == "POST":
-        f = request.files["file"]
-        filename = secure_filename(f.filename)
-        f.save(filename)
-        session["filename"] = filename
-        return render_template("acknowledgement.html", name=f.filename)
 
 
 if __name__ == "__main__":
