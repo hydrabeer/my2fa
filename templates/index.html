@@ -9,9 +9,23 @@
 </head>
 <body>
 <h1>My 2FA</h1>
+<h3>Upload an export file from your password manager</h3>
+<p>The "upload" button below places a copy of your vault file into the local
+  project directory.<br>
+  <em>Make sure to delete all instances of your vault file when you're
+    done.</em>
+</p>
+
 <form action="/success" method="post" enctype="multipart/form-data">
   <input type="file" name="file"/>
   <input type="submit" value="Upload">
 </form>
+<p>
+  <a href="https://github.com/hydrabeer/my2fa"
+     target="_blank"
+     rel="noopener noreferrer">
+    See the GitHub page</a>
+  for a list of supported password managers and export instructions.
+</p>
 </body>
 </html>
