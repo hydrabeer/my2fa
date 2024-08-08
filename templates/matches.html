@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Matched Items | My2FA</title>
+  <link rel="stylesheet" type="text/css" href="../static/global.css">
+</head>
+<body>
+{% if matched_items %}
+  <h2>Matched Items:</h2>
+  <ul>
+    {% for item in matched_items %}
+      <li>{{ item }}, {{ matched_items[item] }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+<form method="GET" action="/">
+  <button type="submit">Return to homepage</button>
+</form>
+</body>
+</html>

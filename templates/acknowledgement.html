@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <title>My2FA</title>
+  <title>Upload Success | My2FA</title>
   <link rel="stylesheet" type="text/css" href="../static/global.css">
 </head>
 <body>
-<h1>My 2FA</h1>
-<form action="/success" method="post" enctype="multipart/form-data">
-  <input type="file" name="file"/>
-  <input type="submit" value="Upload">
+<p>File uploaded successfully</p>
+<p>File Name: {{ name }}</p>
+<form method="POST" action="/match">
+  <button type="submit">Fetch and Match</button>
 </form>
 </body>
 </html>
