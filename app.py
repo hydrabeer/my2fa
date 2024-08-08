@@ -21,7 +21,7 @@ def not_found_error(error):
 
 
 @app.errorhandler(405)
-def not_found_error(error):
+def method_not_allowed_error(error):
     return render_template("405.html"), 404
 
 
