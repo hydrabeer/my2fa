@@ -1,9 +1,12 @@
-from flask import Flask, render_template
+import secrets
+
+from flask import Flask, render_template, request, session
 
 from api.fetch import fetch_2fa_data
 from match.interface import MatchInterface
 
 app = Flask(__name__)
+app.secret_key = secrets.token_urlsafe(16)
 
 
 @app.route("/")
@@ -14,10 +17,22 @@ def index():
 @app.route("/match", methods=["POST"])
 def match():
     api_data = fetch_2fa_data()
-    matcher = MatchInterface(api_data, "1PasswordExport.csv")
+    filename = session.get("filename")
+    if not filename:
+        return "No file uploaded", 400
+    matcher = MatchInterface(api_data, filename)
     matched_items = matcher.match()
 
-    return render_template("index.html", matched_items=matched_items)
+    return render_template("matches.html", matched_items=matched_items)
+
+
+@app.route("/success", methods=["POST"])
+def success():
+    if request.method == "POST":
+        f = request.files["file"]
+        f.save(f.filename)
+        session["filename"] = f.filename
+        return render_template("acknowledgement.html", name=f.filename)
 
 
 if __name__ == "__main__":
