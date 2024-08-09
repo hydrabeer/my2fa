@@ -24,6 +24,7 @@ This tool currently only supports unencrypted export files, so you should delete
 ### Export instructions:
 - [1Password](https://support.1password.com/export/) (Choose `.csv`)
 - [Bitwarden](https://bitwarden.com/learning/passwordmanager-how-to-export-your-bitwarden-vault/)
+- [Dashlane](https://support.dashlane.com/hc/en-us/articles/202625092-Export-Dashlane-data-to-a-CSV-file) (Use `credentials.csv` and add `dashlane` to the filename)
 - [LastPass](https://support.lastpass.com/s/document-item?bundleId=lastpass&topicId=LastPass/export-vault.html&_LANG=enus)
 
 *Don't see your favorite password manager? Feel free to open an issue and request support for it.*
