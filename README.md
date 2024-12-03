@@ -71,7 +71,7 @@ This setup will create a locally run server using Flask, which you can access vi
 fetches data from the [2FA Directory API](https://2fa.directory/api/), matches entries with items from your password
 manager export file, and displays the results on a web page.
 
-
+![image](https://github.com/user-attachments/assets/a33ed504-a0c5-4f2c-a8a3-a1a34b352ee3)
 
 - [1Password](https://support.1password.com/export/) (Choose `.csv`)
 - [Bitwarden](https://bitwarden.com/learning/passwordmanager-how-to-export-your-bitwarden-vault/)
