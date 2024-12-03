@@ -67,9 +67,11 @@ python3 app.py
 
 ## Usage
 
-This setup will create a locally run server using Flask, which you can access via a web browser. The application will
-fetch data from the [2FA Directory API](https://2fa.directory/api/), match entries with items from your password manager
-export file, and display the results on a web page.
+This setup will create a locally run server using Flask, which you can access via a web browser. The application
+fetches data from the [2FA Directory API](https://2fa.directory/api/), matches entries with items from your password
+manager export file, and displays the results on a web page.
+
+
 
 - [1Password](https://support.1password.com/export/) (Choose `.csv`)
 - [Bitwarden](https://bitwarden.com/learning/passwordmanager-how-to-export-your-bitwarden-vault/)
