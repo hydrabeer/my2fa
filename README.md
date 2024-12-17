@@ -14,7 +14,7 @@
 
 ## Overview
 
-My2FA is a tool that allows you to see which of your accounts support two-factor authentication (2FA) and which
+my2FA is a tool that allows you to see which of your accounts support two-factor authentication (2FA) and which
 methods they support. It does this by comparing the accounts in your password manager with the entries in the
 [2FA Directory](https://2fa.directory/).
 
